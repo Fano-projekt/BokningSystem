@@ -1,0 +1,468 @@
+﻿/* ======== Grundläggande styling ======== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f8f9;
+    ;
+}
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding: 1rem;
+}
+
+.login-container {
+    background-color: #c8d9db;
+    padding: 2rem 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+}
+
+    .login-container h2 {
+        text-align: center;
+        color: #004b5a;
+        margin-bottom: 1.5rem;
+    }
+
+.form-group {
+    margin-bottom: 1.3rem;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.4rem;
+        color: #003c4d;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 0.6rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background-color: #eef6ff;
+        font-size: 1rem;
+    }
+
+        .form-group input:focus {
+            border-color: #007c91;
+            outline: none;
+        }
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.forgot-password {
+    font-size: 0.9rem;
+    text-decoration: underline;
+    color: #004b5a;
+}
+
+button[type="submit"] {
+    background-color: #1f6f80;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+    button[type="submit"]:hover {
+        background-color: #155561;
+    }
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #842029;
+    padding: 0.8rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+/* ======== Wrapper för layouten ======== */
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* ======== Sektion för bokning & bokade tider ======== */
+.top-section {
+    display: flex;
+    gap: 20px;
+}
+
+/* ======== Vänster sektion (Bokningsformulär) ======== */
+.left-section {
+    flex: 1.2;
+    padding-right: 20px;
+    max-width: 400px; /* Mindre storlek på formuläret */
+}
+
+    .left-section h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+/* ======== Formulär-rutor ======== */
+.form-group {
+    margin-bottom: 12px;
+}
+
+    .form-group label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/* ======== Knappar ======== */
+.btn-primary, .btn-success {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+    .btn-primary:hover, .btn-success:hover {
+        background: #0056b3;
+        transform: scale(1.05);
+    }
+
+/* ======== Höger sektion (Bokade tider) ======== */
+.right-section {
+    flex: 1;
+}
+
+.toggle-btn {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* ======== Bokade tider (döljs från början) ======== */
+.booked-times {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+    .booked-times ul {
+        padding: 0;
+    }
+
+    .booked-times li {
+        list-style: none;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+/* ======== Behåll sidan ren och centrerad ======== */
+/* ======== Grundläggande styling ======== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* ======== Wrapper för informationssektionen ======== */
+.full-width-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Mellanrum mellan rutorna */
+    width: 100%;
+    padding: 50px 0;
+}
+
+/* Fyrkantiga informationsboxar */
+.info-box {
+    width: 300px; /* Justera storlek */
+    height: 220px;
+    background: #007bff; /* Blå bakgrund */
+    border: none; /* Ingen border-radius, helt fyrkantig */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white; /* Vit text */
+    transition: transform 0.3s ease-in-out;
+}
+
+    /* Titlarna ska ligga ovanför boxarna */
+    .info-box h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #007bff; /* Blå text */
+        text-align: center;
+    }
+
+    /* Se till att texten inte blir för liten */
+    .info-box p {
+        margin: 5px 0;
+        font-size: 15px;
+        font-weight: normal;
+    }
+.info_section {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-hover {
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+}
+
+    .btn-hover:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 123, 0.2);
+    }
+
+    .btn-hover.secondary {
+        background: var(--secondary-color);
+    }
+
+        .btn-hover.secondary:hover {
+            background: #5a6268;
+        }
+
+.info_section {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Knappar */
+.btn-hover {
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+}
+
+    .btn-hover:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 123, 0.2);
+    }
+
+    .btn-hover.secondary {
+        background: var(--secondary-color);
+    }
+
+        .btn-hover.secondary:hover {
+            background: #5a6268;
+        }
+
+/* Sektion med bild och text */
+.image_text_section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+    .image_text_section img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        min-width: 300px;
+    }
+
+.info_box {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Recensionssektion */
+.review_section {
+    margin-top: 50px;
+}
+
+.review_card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    border-left: 4px solid var(--primary-color);
+}
+
+    .review_card:hover {
+        transform: translateY(-5px);
+    }
+
+    .review_card h5 {
+        color: var(--primary-dark);
+        margin-bottom: 10px;
+    }
+
+/* Listor */
+.service-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+    .service-list li {
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+    }
+
+        .service-list li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-right: 10px;
+        }
+
+/* Form och inputs */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+    .form-control:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+/* Utilities */
+.text-center {
+    text-align: center;
+}
+
+.mt-5 {
+    margin-top: 3rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Bokade tider lista */
+.booked-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+    .booked-list li {
+        background: var(--light-color);
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+        .booked-list li span {
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+
+/* Responsiv bild-text */
+@media (max-width: 768px) {
+    .image_text_section {
+        flex-direction: column;
+    }
+
+    .btn-hover {
+        max-width: 100%;
+    }
+}
+
+/* Anpassning för mindre skärmar */
+@media (max-width: 768px) {
+    .full-width-section {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .info-box {
+        width: 280px;
+        height: 200px;
+        font-size: 14px;
+    }
+}
+
