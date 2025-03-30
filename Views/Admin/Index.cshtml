@@ -1,0 +1,78 @@
+﻿@model BokningSystem.Models.AdminDashboardViewModel
+
+
+@{
+    ViewData["Title"] = "Admin - Sidan";
+    Layout = "_Layout";
+}
+
+
+<div class="container mt-5">
+    <h2 class="text-center">Hantera Lediga Tider</h2>
+
+    <form asp-action="Create" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="nyLedigTid">Lägg till en ny ledig tid</label>
+            <input type="datetime-local" name="nyLedigTid" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-success mt-3">Lägg till tid</button>
+    </form>
+
+    <table class="table table-striped mt-4">
+        <thead>
+            <tr>
+                <th>Tid</th>
+                <th>Åtgärder</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tid in Model.LedigaTider)
+            {
+                <tr>
+                    <td>@tid.Tid.ToString("yyyy-MM-dd HH:mm")</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Admin", new { id = tid.Id })" class="btn btn-warning btn-sm">Redigera</a>
+                        <a href="@Url.Action("Delete", "Admin", new { id = tid.Id })" class="btn btn-danger btn-sm" onclick="return confirm('Är du säker?')">Ta bort</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center">Bokade tider</h2>
+
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th>Patientnamn</th>
+                <th>Personnummer</th>
+                <th>Vårdgivarens namn</th>
+                <th>Yrkeskategori</th>
+                <th>Anledning</th>
+                <th>Bokad tid</th>
+                <th>Åtgärder</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bokning in Model.Bokningar)
+            {
+                 <tr>
+                    <td>@bokning.PatientNamn</td>
+                    <td>@bokning.PatientId</td>
+                    <td>@bokning.StaffMemberName</td>
+                    <td>@bokning.StaffMemberPosition</td>
+                    <td>@bokning.Anledning</td>
+                    <td>@bokning.Tid.ToString("yyyy-MM-dd HH:mm")</td>
+                    <td>
+                        <a href="@Url.Action("DeleteBokning", "Admin", new { id = bokning.Id })" class="btn btn-danger btn-sm">Ta bort</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
